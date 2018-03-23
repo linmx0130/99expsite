@@ -30,7 +30,7 @@ Vue.component("pictureChoice", {
               '  class="list-group-item list-group-item-action picture-problem-item"'+
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
-              '> <img v-bind:src="item.img" v-bind:alt="item.text"/></button>'+ 
+              '> <img v-on:click="clickOnImg($event)" v-bind:src="item.img" v-bind:alt="item.text"/></button>'+ 
               '</div><div class="align-right-bar">' + 
               '<button class="btn btn-outline-primary" ' +
               '        v-bind:disabled="value===null"  ' +
@@ -38,8 +38,13 @@ Vue.component("pictureChoice", {
               "</div></div>",
     methods: {
         click: function(event) {
+          this.clickWithAlt(event.target.children[0].alt);
+        },
+        clickOnImg: function(event) {
+          this.clickWithAlt(event.target.alt);
+        },
+        clickWithAlt: function(alt) {
           var ret_data = event.target.children[0].alt;
-          alert(ret_data);
           this.$emit('input', ret_data);
           this.$emit('userchosen', ret_data);
         },
