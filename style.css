@@ -27,3 +27,12 @@ body {
 .text-problem-item {
     width:100%;
 }
+.picture-problem-item {
+    width:50%;
+    display: inline;
+}
+.align-right-bar {
+  align-items: right;
+  text-align: right;
+  padding: 15px 0px;
+}

@@ -1,21 +1,69 @@
 Vue.component("textChoice", {
     props: ['choices', 'value'],
-    template: "<div class=\"list-group\"> " + 
+    template: "<div> <div class=\"list-group\"> " + 
               '<button v-for="item in choices"' + 
               '  class="text-problem-item list-group-item list-group-item-action"'    +
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
               '> {{ item.text }}</button>'+ 
-              "</div>",
+              '</div><div class="align-right-bar">' +
+              '<button class="btn btn-outline-primary" ' +
+              '        v-bind:disabled="value===null"  ' +
+              '        v-on:click="onNextButtonClicked"> ▶ </button>' +
+              "</div> </div>",
     methods: {
         click: function(event) {
-          console.log(event.target.textContent);
           var ret_data = event.target.textContent.trim();
           this.$emit('input', ret_data);
           this.$emit('userchosen', ret_data);
+        },
+        onNextButtonClicked: function(){
+          this.$emit('next');
         }
     }
 });
+
+Vue.component("pictureChoice", {
+    props: ['choices', 'value'],
+    template: "<div> <div> " + 
+              '<button v-for="item in choices"' + 
+              '  class="list-group-item list-group-item-action picture-problem-item"'+
+              '  :class="{active: item.isChosen}"'+
+              '  v-on:click="click($event)"'+
+              '> <img v-bind:src="item.img" v-bind:alt="item.text"/></button>'+ 
+              '</div><div class="align-right-bar">' + 
+              '<button class="btn btn-outline-primary" ' +
+              '        v-bind:disabled="value===null"  ' +
+              '        v-on:click="onNextButtonClicked"> ▶ </button>' +
+              "</div></div>",
+    methods: {
+        click: function(event) {
+          var ret_data = event.target.children[0].alt;
+          console.log(ret_data);
+          this.$emit('input', ret_data);
+          this.$emit('userchosen', ret_data);
+        },
+        onNextButtonClicked: function(){
+          this.$emit('next');
+        }
+    }
+});
+Vue.component("reviewChoice", {
+    template: "<div> "+
+              '<p>您已经完成了所有题目，想要检查吗？</p>' +
+              '<button class="btn btn-outline-primary" v-on:click="onCheckClicked">检查</button>' +
+              '<button class="btn btn-outline-primary" v-on:click="onConfirmClicked">提交</button>' +
+              '</div>',
+    methods: {
+        onCheckClicked: function(){
+          this.$emit("oncheckclicked");
+        },
+        onConfirmClicked: function(){
+          this.$emit("onconfirmclicked");
+        }
+    }
+});
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -28,7 +76,10 @@ var app = new Vue({
             choice: [{text:'Un', isChosen:false}, {text:'Deux', isChosen:false}, {text:'Trois', isChosen:false}, {text:'Quatre', isChosen:false}], userChoice: null
         },
         {text: 'A picture problem demo', type: 'picture',
-            choice: ['', '', '', ''], userChoice:null}
+            choice: [{img:'images/a.svg', text:"a", isChosen:false}, 
+                     {img:'images/b.svg', text:"b", isChosen:false}, 
+                     {img:'images/c.svg', text:"c", isChosen:false},
+                     {img:'images/d.svg', text:"d", isChosen:false}], userChoice:null}
     ],
     currentPiece: 0,
   },
@@ -36,24 +87,38 @@ var app = new Vue({
     showPiece: function(){
       this.currentProblem = this.problems[this.currentPiece];
     },
+    animateShowPiece: function(){
+      var thisapp = this;
+      $("#problem-form").fadeOut(400, function(){
+        thisapp.showPiece();
+        $("#problem-form").fadeIn(400);
+      });
+    },
     nextPiece: function() {
       this.currentPiece += 1;
       if (this.currentPiece >= this.problems.length){
         this.currentPiece = 0;
       }
-      this.showPiece();
+      this.animateShowPiece();
     },
     onUserChosen: function(payload) {
       payload = payload.trim();
       for (var item_id in this.currentProblem.choice){
         var item = this.currentProblem.choice[item_id];
-        console.log(item);
         if (item.text === payload){
           item.isChosen = true;
         } else {
           item.isChosen = false;
         }
       }
+      this.nextPiece();
+    },
+    onReviewCheckClicked: function() {
+      this.currentPiece = 0;
+      this.animateShowPiece();
+    },
+    onReviewConfirmClicked: function() {
+    
     },
     startProblems: function() {
       var selectProblemSet = function(problems, chosenAmount) {
@@ -75,6 +140,7 @@ var app = new Vue({
       };
 
       this.problems = selectProblemSet(this.problems, 3);
+      this.problems.push({type: "review"});
       this.showPiece();
       $("#welcome-form").fadeOut(400, function(){
         $("#problem-form").fadeIn(400);
