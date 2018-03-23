@@ -39,7 +39,7 @@ Vue.component("pictureChoice", {
     methods: {
         click: function(event) {
           var ret_data = event.target.children[0].alt;
-          console.log(ret_data);
+          alert(ret_data);
           this.$emit('input', ret_data);
           this.$emit('userchosen', ret_data);
         },
