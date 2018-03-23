@@ -26,11 +26,11 @@ Vue.component("textChoice", {
 Vue.component("pictureChoice", {
     props: ['choices', 'value'],
     template: "<div> <div> " + 
-              '<button v-for="item in choices"' + 
+              '<input type="image" v-for="item in choices"' + 
               '  class="list-group-item list-group-item-action picture-problem-item"'+
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
-              '> <img v-on:click="clickOnImg($event)" v-bind:src="item.img" v-bind:alt="item.text"/></button>'+ 
+              '  v-bind:src="item.img" v-bind:alt="item.text"/></input>'+ 
               '</div><div class="align-right-bar">' + 
               '<button class="btn btn-outline-primary" ' +
               '        v-bind:disabled="value===null"  ' +
@@ -38,13 +38,9 @@ Vue.component("pictureChoice", {
               "</div></div>",
     methods: {
         click: function(event) {
-          this.clickWithAlt(event.target.children[0].alt);
-        },
-        clickOnImg: function(event) {
           this.clickWithAlt(event.target.alt);
         },
-        clickWithAlt: function(alt) {
-          var ret_data = event.target.children[0].alt;
+        clickWithAlt: function(ret_data) {
           this.$emit('input', ret_data);
           this.$emit('userchosen', ret_data);
         },
