@@ -118,6 +118,9 @@ var app = new Vue({
       this.animateShowPiece();
     },
     onReviewConfirmClicked: function() {
+      $("#problem-form").fadeOut(400, function() {
+        $("#ending-form").fadeIn(400);
+      });
     
     },
     startProblems: function() {
