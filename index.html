@@ -15,13 +15,21 @@
   <body class="text-center">
   <div id="app">
       <div class="form-center" id="welcome-form">
-          <h1>Welcome Page</h1>
-          <p> Here is some description of this project...</p> 
-            <button class="btn btn-outline-primary" v-on:click="startProblems">Start!</button>
+          <p>
+          <img src="wel_title.png" class="wel-title"></img>
+          </p>
+          <p>
+            <input id="playername" v-model="playerName" placeholder="请输入你的名字" value="" required="" type="text">
+          </p>
+          </p>
+            <button class="btn fancy-button bg-gradient1" v-on:click="startProblems">开始吧</button>
+          </p>
       </div>
 
       <div class="form-center" id="problem-form" style="display: none">
+        <p class="problem-text">
         {{ currentProblem.text }}
+        </p>
         <div v-if='currentProblem.type==="text"'>
             <text-choice v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
         </div>
@@ -36,6 +44,7 @@
 
       </div>
       <div class="form-center" id="ending-form" style="display: none">
+          <p> Player Name: {{playerName}} </p>
             <p> Simple Ending... TODO later!</p>
       </div>
     </div>
