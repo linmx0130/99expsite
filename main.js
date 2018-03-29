@@ -164,6 +164,24 @@ var app = new Vue({
     currentPiece: 0,
     playerName: "",
   },
+  computed: {
+    total_score: function(){
+        var ret = 0;
+        var score_map = [2, 4, 6, 8];
+        for (var i=0;i<this.problems.length;++i){
+            var problem = this.problems[i];
+            if (problem.type === "review") continue;
+            if (problem.userChoice !== null){
+                for (j=0;j<4;++j){
+                    if (problem.choice[j].isChosen) {
+                        ret += score_map[j]
+                    }
+                }
+            }
+        }
+        return ret + 20;
+    }
+  },
   methods: {
     showPiece: function(){
       this.currentProblem = this.problems[this.currentPiece];
@@ -199,8 +217,11 @@ var app = new Vue({
       this.animateShowPiece();
     },
     onReviewConfirmClicked: function() {
+      var self = this;
       $("#problem-form").fadeOut(400, function() {
-        $("#ending-form").fadeIn(400);
+        $("#ending-form").fadeIn(400, function(){
+            $("#final-progress-bar").animate({"width": self.total_score + "%"}, 'slow');
+        });
       });
     
     },
@@ -223,12 +244,13 @@ var app = new Vue({
         return selectedP;
       };
 
-      this.problems = selectProblemSet(this.problems, 3);
+      this.problems = selectProblemSet(this.problems, 9);
       this.problems.push(this.final_problem);
       this.problems.push({type: "review"});
       this.showPiece();
       $("#welcome-form").fadeOut(400, function(){
-        $("#problem-form").fadeIn(400);
+        $("#problem-form").fadeIn(400, function(){
+        });
     })},
   }
 });
