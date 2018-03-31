@@ -223,19 +223,51 @@ body {
 .final-review-text{
   text-align: left;
   color: #ff604e;
-  font-size: 0.8em;
+
+  @media (max-width: 600px){
+    font-size: 0.75em;
+  }
+  @media (min-width: 600px){
+    font-size: 1.5em;
+  }
+  
   padding-left:1em;
 }
 .final-review-text big{
-  font-size: 2em;
+  @media (max-width: 600px){
+    font-size: 1.5em;
+  }
+  @media (min-width: 600px){
+    font-size: 3em;
+  }
 }
 .final-review-slogan {
   margin-top:-1.5em; 
+  margin-bottom:0;
 }
 .final-review-slogan img{
-    height: 8em
+    height: 6em
 }
 .final-review-invoicing {
-    text-align: right;
+  text-align: right;
+  font-size: 0.75em;
   color: #ff604e;
+  width:80%;
+  margin-bottom: 0;
+}
+.qrcode-container img {
+  width: 25vw;
+  max-width:125px;
+}
+#ending-form{
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction:column;
 }
