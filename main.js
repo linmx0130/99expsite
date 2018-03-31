@@ -152,7 +152,7 @@ var app = new Vue({
                      {text:'B612星球', isChosen: false}, 
                      {text:'石榴', isChosen:false}, 
                      {text:'别想了，就是一颗钢球', isChosen:false}], userChoice:null},
-        {text: '请问下列所述行为中哪项是复旦人最难大成的成就？', type: 'text', 
+        {text: '请问下列所述行为中哪项是复旦人最难达成的成就？', type: 'text', 
             choice: [{text:'连续一个月一日三餐吃食堂', isChosen: false}, 
                      {text:'从来不丢一卡通', isChosen: false}, 
                      {text:'在前三周刷完所有的早锻', isChosen:false}, 

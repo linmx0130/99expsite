@@ -21,10 +21,10 @@ body {
     height: 80vh;
     min-width: 28px;
     max-width: 600px;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-right: 10%;
-    margin-left: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
     display:table-cell;
     background-color: #ffffff;
     border: 1px solid;
@@ -33,7 +33,6 @@ body {
     padding-left: 8px;
     padding-right: 8px;
     padding-bottom: calc(10vh + 10px);
-    box-shadow: 10px 10px 5px #888888;
     vertical-align: center;
 }
 .text-problem-item {
