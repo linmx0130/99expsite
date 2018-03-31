@@ -233,7 +233,36 @@ var app = new Vue({
             }
         }
         return ret + 20;
+    },
+    final_rank_filename: function(){
+        var score = this.total_score;
+        if (score>=40 && score<50) {
+          return "images/total_false.png";
+        } else if (score >=50 && score <60) {
+          return "images/quite_false.png"
+        } else if (score >=60 && score <70) {
+          return "images/half_true.png";
+        } else if (score >= 70 && score <80){
+          return "images/quite_true.png";
+        } else {
+          return "images/total_true.png"
+        }
+    },
+    final_slogan_filename: function(){
+        var score = this.total_score;
+        if (score>=40 && score<50) {
+          return "images/slogan1.png";
+        } else if (score >=50 && score <60) {
+          return "images/slogan2.png";
+        } else if (score >=60 && score <70) {
+          return "images/slogan3.png";
+        } else if (score >= 70 && score <80){
+          return "images/slogan4.png";
+        } else {
+          return "images/slogan5.png";
+        }
     }
+
   },
   methods: {
     showPiece: function(){

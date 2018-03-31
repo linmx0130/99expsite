@@ -223,8 +223,18 @@ body {
 .final-review-text{
   text-align: left;
   color: #ff604e;
+  font-size: 0.8em;
 }
 .final-review-text big{
   font-size: 2em;
 }
-
+.final-review-slogan {
+  margin-top:-1.5em; 
+}
+.final-review-slogan img{
+    height: 8em
+}
+.final-review-invoicing {
+    text-align: right;
+  color: #ff604e;
+}
