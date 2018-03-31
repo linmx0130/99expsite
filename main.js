@@ -302,8 +302,8 @@ var app = new Vue({
     },
     onReviewConfirmClicked: function() {
       var self = this;
-      $("#problem-form").fadeOut(400, function() {
-        $("#ending-form").fadeIn(400, function(){
+      $("#problem-form").fadeOut(1000, function() {
+        $("#ending-form").fadeIn(1000, function(){
         });
       });
     
