@@ -30,9 +30,9 @@
         <div class="vertical-center">
             <p class="problem-text">
             {{ currentProblem.text }}
-            <span v-if="'extra_pic' in currentProblem">
-                <br> <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
-            </span>
+            <div v-if="'extra_pic' in currentProblem">
+               <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
+            </div>
             </p>
             <text-choice v-if='currentProblem.type==="text"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
             <picture-choice v-if='currentProblem.type==="picture"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </picture-choice>
@@ -48,11 +48,11 @@
 
       </div>
       <div class="form-center" id="ending-form" style="display: none">
-          <p> Player Name: {{playerName}} Score = {{total_score}} </p>
-          <div class="progress">
-              <div id="final-progress-bar" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p> Simple Ending... TODO later!</p>
+          <p class="final-review-text"> <big>{{playerName}}</big> 同学 <br> 
+          你在本次「真假复旦人」测试<br>
+          中的分数是 <big>{{total_score}} </big> 分<br>
+          综合你在此次测验中的表现 <br>
+          </p>
       </div>
     </div>
 

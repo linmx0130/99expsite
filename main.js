@@ -26,10 +26,11 @@ Vue.component("pictureChoice", {
     props: ['choices', 'value'],
     template: "<div> <div> " + 
               '<input type="image" v-for="item in choices"' + 
-              '  class="list-group-item list-group-item-action picture-problem-item"'+
+              '  class="picture-problem-item list-group-item list-group-item-action"'+
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
-              '  v-bind:src="item.img" v-bind:alt="item.text"/></input>'+ 
+              '  v-bind:src="item.img" v-bind:alt="item.text" '+
+              '  style=""/>'+ 
               '</div></div>',
     methods: {
         click: function(event) {
@@ -95,7 +96,7 @@ var app = new Vue({
                      {text:'因为风水师说本部不能有操场', isChosen: false}, 
                      {text:'因为要防止附近居民进入本部跳广场舞', isChosen:false}, 
                      {text:'因为约会场所太多会伤害单身狗', isChosen:false}], userChoice:null},
-        {text: '下图中的哪只猫咪是经常在光草前等待投食的猫咪？', type: 'picture',
+        {text: '下图中的哪只猫咪是经常在三教前等待投食的猫咪？', type: 'picture',
             choice: [{img:'images/cat4.jpg', text:"a", isChosen:false}, 
                      {img:'images/cat2.jpg', text:"b", isChosen:false}, 
                      {img:'images/cat3.jpg', text:"c", isChosen:false},
@@ -274,7 +275,6 @@ var app = new Vue({
       var self = this;
       $("#problem-form").fadeOut(400, function() {
         $("#ending-form").fadeIn(400, function(){
-            $("#final-progress-bar").animate({"width": self.total_score + "%"}, 'slow');
         });
       });
     
