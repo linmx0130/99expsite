@@ -28,7 +28,6 @@ body {
 }
 .text-problem-item {
     width:100%;
-    font-size: 1.2em;
     font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", "Arial", "PingFang SC", "Source Han Sans CN", "Hiragino Sans GB", "Dengxian", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
 }
 .picture-problem-item {
@@ -151,7 +150,8 @@ body {
 
 #playername {
   width: 80%;
-  font-size: 1.2em;
+  text-align: center;
+  font-size: 1.8em;
 }
 
 .problem-text{
