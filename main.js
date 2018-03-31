@@ -144,7 +144,7 @@ var app = new Vue({
                      {text:'撑一把油纸伞徘徊', isChosen:false}], userChoice:null},
         {text: '你在东区门口红绿灯处看到一群身着睡衣，提着小篮子 / 水桶的同学们，请问他们这么做的原因是什么？', type: 'text', 
             choice: [{text:'行为艺术', isChosen: false}, 
-                     {text:'养成喷发胶的好习惯', isChosen: false}, 
+                     {text:'光草睡衣趴', isChosen: false}, 
                      {text:'街拍新潮流', isChosen:false}, 
                      {text:'东区又停水了', isChosen:false}], userChoice:null},
         {text: '请问下图中的雕塑是什么？', type: 'text',  

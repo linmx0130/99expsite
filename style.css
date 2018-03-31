@@ -37,15 +37,20 @@ body {
     padding-bottom: 10px;
     vertical-align: center;
 }
+.list-group-item.active{
+  background-color: #ff604e;
+  border-color: #ffffff;
+  color: #ffffff;
+}
 .text-problem-item {
     width:100%;
-    color: #ff604e;
+    color: #000000;
     font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", "Arial", "PingFang SC", "Source Han Sans CN", "Hiragino Sans GB", "Dengxian", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
     font-size:0.8em;
 }
 .picture-problem-item {
     width:50%;
-    color: #ff604e;
+    color: #000000;
     display: inline;
     border-radius:0 !important;
     margin-bottom:0 !important;
@@ -172,9 +177,11 @@ body {
 
 .problem-text{
   font-size: 1.2em;
-    color: #ff604e;
+  color: #000000;
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", "Arial", "PingFang SC", "Source Han Sans CN", "Hiragino Sans GB", "Dengxian", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
   text-align: left;
+  padding-left:2em;
+  padding-right:2em;
 }
 
 .extra-pic{
