@@ -29,6 +29,9 @@
       <div class="form-center" id="problem-form" style="display: none">
         <p class="problem-text">
         {{ currentProblem.text }}
+        <span v-if="'extra_pic' in currentProblem">
+            <br> <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
+        </span>
         </p>
         <div v-if='currentProblem.type==="text"'>
             <text-choice v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
