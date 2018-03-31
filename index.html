@@ -16,7 +16,7 @@
   <div id="app">
       <div class="form-center" id="welcome-form">
           <p>
-          <img src="wel_title.jpg" class="wel-title"></img>
+          <img src="wel_title.jpg" class="wel-title">
           </p>
           <p>
             <input id="playername" v-model="playerName" placeholder="请输入你的名字" value="" required="" type="text">
@@ -31,7 +31,7 @@
             <p class="problem-text">
             {{ currentProblem.text }}
             <div v-if="'extra_pic' in currentProblem">
-               <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
+               <img class='extra-pic' v-bind:src="currentProblem.extra_pic">
             </div>
             </p>
             <text-choice v-if='currentProblem.type==="text"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div id="logo99">
-            <img src="images/logo.svg"></img>
+            <img src="images/logo.svg">
         </div>
 
       </div>
@@ -52,7 +52,7 @@
           你在本次「真假复旦人」测试<br>
           中的分数是 <big>{{total_score}} </big> 分<br>
           综合你在此次测验中的表现 <br>
-          你的「复旦人指数」为 <span><img v-bind:src="final_rank_filename" style="height:3em"/></span><br>
+          你的「复旦人指数」为 <span><img v-bind:src="final_rank_filename" style="height:3em"></span><br>
           </p>
           <p class="final-review-slogan">
               <img v-bind:src="final_slogan_filename"/>
