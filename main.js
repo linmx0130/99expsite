@@ -1,3 +1,9 @@
+var userAgent = window.navigator.userAgent;
+
+if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+   // iPad or iPhone
+   $(".form-center").css("max-height", "90%");
+}
 Vue.component("textChoice", {
     props: ['choices', 'value'],
     template: "<div> <div class=\"list-group choices-block\"> " + 
