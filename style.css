@@ -183,6 +183,10 @@ body {
   padding-left:2em;
   padding-right:2em;
 }
+.picture-problem-text{
+  padding-left:0.5em;
+  padding-right:0.5em;
+}
 
 .extra-pic{
   max-width:75%;
@@ -229,7 +233,7 @@ body {
 }
 .final-review-text{
   text-align: left;
-  color: #ff604e;
+  color: #000000;
 
   @media (max-width: 600px){
     font-size: 0.75em;
@@ -248,6 +252,9 @@ body {
     font-size: 3em;
   }
 }
+.final-review-text .score{
+  color: #ff604e;
+}
 .final-review-slogan {
   margin-top:-1.5em; 
   margin-bottom:0;
@@ -258,7 +265,7 @@ body {
 .final-review-invoicing {
   text-align: right;
   font-size: 0.75em;
-  color: #ff604e;
+  color: #000000;
   width:80%;
   margin-bottom: 0;
 }
