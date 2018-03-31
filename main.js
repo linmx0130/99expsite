@@ -1,14 +1,13 @@
 Vue.component("textChoice", {
     props: ['choices', 'value'],
-    template: "<div> <div class=\"list-group\"> " + 
+    template: "<div> <div class=\"list-group choices-block\"> " + 
               '<button v-for="item in choices"' + 
               '  class="text-problem-item list-group-item list-group-item-action"'+
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
               '> {{ item.text }}</button>'+ 
               '</div><div class="align-right-bar">' +
-              '<button class="btn btn-outline-primary" ' +
-              '        v-bind:disabled="value===null"  ' +
+              '<button v-if="value!==null" class="btn fancy-button bg-gradient1" style="font-size:0.8em"' +
               '        v-on:click="onNextButtonClicked"> ▶ </button>' +
               "</div> </div>",
     methods: {
@@ -32,7 +31,7 @@ Vue.component("pictureChoice", {
               '  v-on:click="click($event)"'+
               '  v-bind:src="item.img" v-bind:alt="item.text"/></input>'+ 
               '</div><div class="align-right-bar">' + 
-              '<button class="btn btn-outline-primary" ' +
+              '<button class="btn fancy-button bg-gradient1" v-if="value!==null" style="font-size:0.8em"' +
               '        v-bind:disabled="value===null"  ' +
               '        v-on:click="onNextButtonClicked"> ▶ </button>' +
               "</div></div>",
@@ -52,8 +51,8 @@ Vue.component("pictureChoice", {
 Vue.component("reviewChoice", {
     template: "<div> "+
               '<p>您已经完成了所有题目，想要检查吗？</p>' +
-              '<button class="btn btn-outline-primary" v-on:click="onCheckClicked">检查</button>' +
-              '<button class="btn btn-outline-primary" v-on:click="onConfirmClicked">提交</button>' +
+              '<button class="btn fancy-button bg-gradient1 btn-review" v-on:click="onCheckClicked">检查</button> <br>' +
+              '<button class="btn fancy-button bg-gradient1 btn-review" v-on:click="onConfirmClicked">提交</button>' +
               '</div>',
     methods: {
         onCheckClicked: function(){
@@ -157,11 +156,11 @@ var app = new Vue({
                      {text:'B612星球', isChosen: false}, 
                      {text:'石榴', isChosen:false}, 
                      {text:'别想了，就是一颗钢球', isChosen:false}], userChoice:null},
-        {text: '如果给你99万，你愿意做下列哪件事？', type: 'text', 
+        {text: '请问下列所述行为中哪项是复旦人最难大成的成就？', type: 'text', 
             choice: [{text:'连续一个月一日三餐吃食堂', isChosen: false}, 
                      {text:'从来不丢一卡通', isChosen: false}, 
                      {text:'在前三周刷完所有的早锻', isChosen:false}, 
-                     {text:'不好意思，这钱我不要了', isChosen:false}], userChoice:null},
+                     {text:'上述三项没有难易之分', isChosen:false}], userChoice:null},
         {text: '请问下列哪家全家不通宵营业？', type: 'text', 
             choice: [{text:'三教全家', isChosen: false}, 
                      {text:'南区宿舍全家', isChosen: false}, 
@@ -192,11 +191,11 @@ var app = new Vue({
                      {text:'复旦人周报', isChosen: false}, 
                      {text:'复旦青年', isChosen:false}, 
                      {text:'混旦', isChosen:false}], userChoice:null},
-        {text: '复旦大学有几个剧社？', type: 'text', 
-            choice: [{text:'8个', isChosen: false}, 
-                     {text:'7个', isChosen: false}, 
-                     {text:'6个', isChosen:false}, 
-                     {text:'5个', isChosen:false}], userChoice:null},
+        {text: '光华楼附近有特殊气味？', type: 'text', 
+            choice: [{text:'樟树', isChosen: false}, 
+                     {text:'杏花', isChosen: false}, 
+                     {text:'银杏树', isChosen:false}, 
+                     {text:'石楠花', isChosen:false}], userChoice:null},
         {text: '复旦没有以下哪种颜色的一卡通？', type: 'text', 
             choice: [{text:'绿色', isChosen: false}, 
                      {text:'橙色', isChosen: false}, 

@@ -11,24 +11,28 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #ffffff;
+  background: #fa6c9f;
+  background: -webkit-linear-gradient(to right, #fa6c9f 0%, #ff6c40 80%, #ff8940 100%);
+  background: linear-gradient(to right, #fa6c9f 0%, #ff6c40 80%, #ff8940 100%);
   height: 100%;
 }
 .form-center {
-    width: 100%;
-    height: 100%;
-    min-width: 330px;
+    width:85vw;
+    height: 80vh;
+    min-width: 28px;
     max-width: 600px;
-    padding: 15px;
-    margin:0 auto;
-    vertical-align: middle;
+    margin:10% 10% 10% 10%;
     display:table-cell;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #ff604e;
+    padding:10px 8px 0px 8px;
+    box-shadow: 10px 10px 5px #888888;
 }
 .text-problem-item {
     width:100%;
     font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", "Arial", "PingFang SC", "Source Han Sans CN", "Hiragino Sans GB", "Dengxian", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+    font-size:0.8em;
 }
 .picture-problem-item {
     width:50%;
@@ -149,16 +153,28 @@ body {
 }
 
 #playername {
-  width: 80%;
+  width: 85%;
   text-align: center;
   font-size: 1.8em;
 }
 
 .problem-text{
-  font-size: 1.2em;
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", "Arial", "PingFang SC", "Source Han Sans CN", "Hiragino Sans GB", "Dengxian", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
 }
 
 .extra-pic{
   width:75%;
+}
+
+#logo99{
+    width:100%;
+    text-align:left;
+    position:absolute;
+    bottom: 75px;
+    left:50px;
+}
+
+.btn-review{
+    margin-left: 2em;
+    margin-right: 2em;
 }

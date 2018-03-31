@@ -16,7 +16,7 @@
   <div id="app">
       <div class="form-center" id="welcome-form">
           <p>
-          <img src="wel_title.png" class="wel-title"></img>
+          <img src="wel_title.jpg" class="wel-title"></img>
           </p>
           <p>
             <input id="playername" v-model="playerName" placeholder="请输入你的名字" value="" required="" type="text">
@@ -33,16 +33,15 @@
             <br> <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
         </span>
         </p>
-        <div v-if='currentProblem.type==="text"'>
-            <text-choice v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
-        </div>
-        <div v-else-if='currentProblem.type==="picture"'>
-            <picture-choice v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </picture-choice>
-        </div>
+        <text-choice v-if='currentProblem.type==="text"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
+        <picture-choice v-if='currentProblem.type==="picture"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </picture-choice>
         <div v-if='currentProblem.type==="review"'>
             <review-choice v-on:oncheckclicked="onReviewCheckClicked"
                            v-on:onconfirmclicked="onReviewConfirmClicked">
             </review-choice>
+        </div>
+        <div id="logo99">
+            <img src="images/logo.png" width="50px" height="50px"></img>
         </div>
 
       </div>
