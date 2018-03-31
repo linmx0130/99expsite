@@ -28,8 +28,7 @@ body {
 }
 .form-center {
     width:85vw;
-    height: 90%;
-    max-height: 90%;
+    height: 90vh;
     min-width: 280px;
     max-width: 600px;
     display:table-cell;
