@@ -24,7 +24,7 @@ body {
 }
 .form-center {
     width:85vw;
-    height: 90vh;
+    height: 90%;
     max-height: 90%;
     min-width: 280px;
     max-width: 600px;
