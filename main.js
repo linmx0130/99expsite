@@ -248,7 +248,9 @@ var app = new Vue({
     nextPiece: function() {
       this.currentPiece += 1;
       if (this.currentPiece >= this.problems.length){
-        this.currentPiece = 0;
+        //this.currentPiece = 0;
+        this.onReviewConfirmClicked()
+        return;
       }
       this.animateShowPiece();
     },
@@ -298,7 +300,7 @@ var app = new Vue({
 
       this.problems = selectProblemSet(this.problems, 9);
       this.problems.push(this.final_problem);
-      this.problems.push({type: "review"});
+      //this.problems.push({type: "review"});
       this.showPiece();
       $("#welcome-form").fadeOut(400, function(){
         $("#problem-form").fadeIn(400, function(){
