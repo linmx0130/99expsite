@@ -1,6 +1,7 @@
 {
     margin: 0px;
     padding: 0px;
+    font-size: 4vw;
 }
 html {
     height:100%;
@@ -22,8 +23,8 @@ body {
 }
 .form-center {
     width:85vw;
-    height: 80vh;
-    min-width: 28px;
+    height: 90vh;
+    min-width: 280px;
     max-width: 600px;
     display:table-cell;
     background-color: #ffffff;
@@ -32,7 +33,7 @@ body {
     padding-top:10px;
     padding-left: 8px;
     padding-right: 8px;
-    padding-bottom: calc(10vh + 10px);
+    padding-bottom: 10px;
     vertical-align: center;
 }
 .text-problem-item {
@@ -179,11 +180,11 @@ body {
     position:absolute;
     width:75vw;
     max-width: 600px;
-    bottom: 12%;
+    bottom: 6vh;
 }
 #logo99 img{
-    height:10%;
-    max-height: 10vh;
+    height:10vh;
+    max-width:100%;
 }
 
 .btn-review{
@@ -210,4 +211,5 @@ body {
   -webkit-box-pack: center;
   justify-content: center;
   flex-direction:column;
+  padding-bottom: calc(10vh + 10px);
 }
