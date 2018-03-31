@@ -170,7 +170,9 @@ body {
 }
 
 .extra-pic{
-  width:75%;
+  max-width:75%;
+  max-height: 25%;
+
 }
 
 #logo99{
@@ -198,5 +200,13 @@ body {
     width: 100%;
 }
 #problem-form{
-    display:flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
 }
