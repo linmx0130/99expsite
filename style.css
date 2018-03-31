@@ -11,9 +11,9 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  background: #fa6c9f;
-  background: -webkit-linear-gradient(to right, #fa6c9f 0%, #ff6c40 80%, #ff8940 100%);
-  background: linear-gradient(to right, #fa6c9f 0%, #ff6c40 80%, #ff8940 100%);
+  background: #ffffff;
+  background: -webkit-linear-gradient(to right, rgba(255, 83, 149,0.6) 0%, rgba(255, 108, 97, 0.6) 33%, rgba(255, 125, 56, 0.6) 66%, rgba(255, 78,45, 0.6) 100%);
+  background: linear-gradient(to right, rgba(255, 83, 149,0.6) 0%, rgba(255, 108, 97, 0.6) 33%, rgba(255, 125, 56, 0.6) 66%, rgba(255, 78,45, 0.6) 100%);
   height: 100%;
 }
 .form-center {
@@ -26,8 +26,12 @@ body {
     background-color: #ffffff;
     border: 1px solid;
     border-color: #ff604e;
-    padding:10px 8px 0px 8px;
+    padding-top:10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: calc(10vh + 10px);
     box-shadow: 10px 10px 5px #888888;
+    vertical-align: center;
 }
 .text-problem-item {
     width:100%;
@@ -167,14 +171,29 @@ body {
 }
 
 #logo99{
-    width:100%;
-    text-align:left;
     position:absolute;
-    bottom: 75px;
-    left:50px;
+    width:75vw;
+    max-width: 600px;
+    bottom: 12%;
+}
+#logo99 img{
+    height:10%;
+    max-height: 10vh;
 }
 
 .btn-review{
     margin-left: 2em;
     margin-right: 2em;
+}
+
+.choices-block {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.vertical-center{
+    margin:auto;
+    width: 100%;
+}
+#problem-form{
+    display:flex;
 }

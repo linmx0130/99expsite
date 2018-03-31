@@ -2,11 +2,11 @@ Vue.component("textChoice", {
     props: ['choices', 'value'],
     template: "<div> <div class=\"list-group choices-block\"> " + 
               '<button v-for="item in choices"' + 
-              '  class="text-problem-item list-group-item list-group-item-action"'+
+              '  class="text-problem-item list-group-item"'+
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
               '> {{ item.text }}</button>'+ 
-              '</div><div class="align-right-bar">' +
+              '</div><div class="align-right-bar" style="display:none">' +
               '<button v-if="value!==null" class="btn fancy-button bg-gradient1" style="font-size:0.8em"' +
               '        v-on:click="onNextButtonClicked"> ▶ </button>' +
               "</div> </div>",
@@ -30,11 +30,7 @@ Vue.component("pictureChoice", {
               '  :class="{active: item.isChosen}"'+
               '  v-on:click="click($event)"'+
               '  v-bind:src="item.img" v-bind:alt="item.text"/></input>'+ 
-              '</div><div class="align-right-bar">' + 
-              '<button class="btn fancy-button bg-gradient1" v-if="value!==null" style="font-size:0.8em"' +
-              '        v-bind:disabled="value===null"  ' +
-              '        v-on:click="onNextButtonClicked"> ▶ </button>' +
-              "</div></div>",
+              '</div></div>',
     methods: {
         click: function(event) {
           this.clickWithAlt(event.target.alt);

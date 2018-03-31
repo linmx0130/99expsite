@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Foolish Day!</title>
+    <title>九十九度「真假复旦人」测验</title>
   </head>
 
   <body class="text-center">
@@ -27,21 +27,23 @@
       </div>
 
       <div class="form-center" id="problem-form" style="display: none">
-        <p class="problem-text">
-        {{ currentProblem.text }}
-        <span v-if="'extra_pic' in currentProblem">
-            <br> <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
-        </span>
-        </p>
-        <text-choice v-if='currentProblem.type==="text"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
-        <picture-choice v-if='currentProblem.type==="picture"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </picture-choice>
-        <div v-if='currentProblem.type==="review"'>
-            <review-choice v-on:oncheckclicked="onReviewCheckClicked"
-                           v-on:onconfirmclicked="onReviewConfirmClicked">
-            </review-choice>
+        <div class="vertical-center">
+            <p class="problem-text">
+            {{ currentProblem.text }}
+            <span v-if="'extra_pic' in currentProblem">
+                <br> <img class='extra-pic' v-bind:src="currentProblem.extra_pic"></img>
+            </span>
+            </p>
+            <text-choice v-if='currentProblem.type==="text"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </text-choice>
+            <picture-choice v-if='currentProblem.type==="picture"' v-bind:choices="currentProblem.choice" v-model="currentProblem.userChoice" v-on:userchosen="onUserChosen" v-on:next="nextPiece"> </picture-choice>
+            <div v-if='currentProblem.type==="review"'>
+                <review-choice v-on:oncheckclicked="onReviewCheckClicked"
+                               v-on:onconfirmclicked="onReviewConfirmClicked">
+                </review-choice>
+            </div>
         </div>
         <div id="logo99">
-            <img src="images/logo.png" width="50px" height="50px"></img>
+            <img src="images/logo.svg"></img>
         </div>
 
       </div>
