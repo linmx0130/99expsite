@@ -188,7 +188,7 @@ var app = new Vue({
                      {text:'复旦人周报', isChosen: false}, 
                      {text:'复旦青年', isChosen:false}, 
                      {text:'混旦', isChosen:false}], userChoice:null},
-        {text: '光华楼附近有特殊气味？', type: 'text', 
+        {text: '光华楼附近有特殊气味的植物是？', type: 'text', 
             choice: [{text:'樟树', isChosen: false}, 
                      {text:'杏花', isChosen: false}, 
                      {text:'银杏树', isChosen:false}, 
