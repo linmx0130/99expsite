@@ -96,11 +96,13 @@ var app = new Vue({
                      {text:'因为风水师说本部不能有操场', isChosen: false}, 
                      {text:'因为要防止附近居民进入本部跳广场舞', isChosen:false}, 
                      {text:'因为约会场所太多会伤害单身狗', isChosen:false}], userChoice:null},
+        /*
         {text: '下图中的哪只猫咪是经常在三教前等待投食的猫咪？', type: 'picture',
             choice: [{img:'images/cat4.jpg', text:"a", isChosen:false}, 
                      {img:'images/cat2.jpg', text:"b", isChosen:false}, 
                      {img:'images/cat3.jpg', text:"c", isChosen:false},
                      {img:'images/cat1.jpg', text:"d", isChosen:false}], userChoice:null},
+                     */
         {text: '期中退课没钱怎么办？', type: 'text', 
             choice: [{text:'提前勤工俭学攒钱', isChosen: false}, 
                      {text:'给教务处老师发邮件哭诉求情', isChosen: false}, 
